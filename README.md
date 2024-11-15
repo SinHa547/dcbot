@@ -1,12 +1,6 @@
-# LeaderOS Discord Bot
+# Blocksin Discord Bot
 
 Allow players to link their accounts and roles, login with Discord account, and reply support tickets on your Discord server. It's completely Open Source!
-
-## Learn More
-
-🇺🇸 English: [https://help.leaderos.net/free-services/discord-bot](https://help.leaderos.net/free-services/discord-bot)
-
-🇹🇷 Türkçe: [https://destek.leaderos.com.tr/uecretsiz-hizmetler/discord-bot](https://destek.leaderos.com.tr/uecretsiz-hizmetler/discord-bot)
 
 ## Requirements
 
@@ -22,13 +16,13 @@ Allow players to link their accounts and roles, login with Discord account, and 
 3. Clone the repository:
 
 ```
-git clone https://github.com/leaderos-net/leaderos-discord-bot
+git clone https://github.com/Blocksin/dcbot
 ```
 
 4. Go to the repository folder:
 
 ```
-cd leaderos-discord-bot
+cd dcbot
 ```
 
 5. Install dependencies:
@@ -37,24 +31,72 @@ cd leaderos-discord-bot
 npm install
 ```
 
-6. Rename the .env.example file to .env and configure it. (See the Configuration section below)
+6. Setup .env ( This is in Google Drive )
 
-7. Run the bot:
+## Running the bot
+
+1. Go into the bot repo in terminal
 
 ```
-npm run start
+cd dcbot
 ```
 
-## Installation Video
+2. Build the docker container
 
-[![Installation Video](https://img.youtube.com/vi/9QX0Z6Q4Zq0/0.jpg)](https://www.youtube.com/watch?v=9QX0Z6Q4Zq0)
+```
+docker build -t dcbot .
+```
 
-## Configuration
+3. Run container
+
+```
+docker run -d dcbot
+```
+
+NOTE: Make sure any existing running docker containers have been stopped
+
+## Updating the bot
+
+1. Head into bot repo
+
+```
+cd dcbot
+```
+
+3. Pull from git
+
+```
+git pull origin main
+```
+
+4. Install npm
+
+```
+npm install
+```
+
+5. Build docker container
+
+```
+docker build -t dcbot .
+```
+
+6. Restart and run docker
+
+```
+docker stop dcbot
+docker rm dcbot
+docker run --name dcbot -d dcbot
+```
+
+NOTE: Make sure tests have been done before restarting bot in prod server
+
+## Configuration .env
 
 | Key                    | Description                                                                                                                                              |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DISCORD_BOT_TOKEN      | Your bot's token. You can find it in the [Discord Developer Portal > Applications > Your Application > Bot](https://discord.com/developers/applications) |
-| WEBSITE_URL            | Your website's URL. (https://yourdomain.com)                                                                                                             |
+| WEBSITE_URL            | Your website's URL. (https://blocksin.net)                                                                                                               |
 | API_KEY                | Your Website API key. You can find it in the Dashboard > Settings > API                                                                                  |
 | LANGUAGE               | The language of the bot. You can find the list of languages in the `languages` folder.                                                                   |
 | DEBUG                  | Enable or disable debug mode.                                                                                                                            |
