@@ -11,13 +11,13 @@ module.exports = {
     },
     profile: {
       description: 'Shows your profile.',
-      title: 'My Profile',
+      title: '**My Profile**',
       embed: {
-        username: 'Username',
-        email: 'Email',
-        credits: 'Credits',
-        role: 'Rank',
-        lastlogin: 'Last Login'
+        username: '**Username**',
+        email: '**Email**',
+        credits: '**Credits**',
+        role: '**Rank**',
+        lastlogin: '**Last Login**'
       },
     },
   },
