@@ -20,6 +20,10 @@ exports.run = async (client, interaction) => {
   // Get user info from API
   const userInfo = await api.getUserInfo(interaction.user.id);
 
+  const roles = userInfo.roles && userInfo.roles.length > 0
+    ? userInfo.roles.map(role => role.name).join(", ")
+    : "Member";
+
   const embed = new Discord.EmbedBuilder()
     .setTitle(t.commands.profile.title)
     .setDescription(
@@ -29,7 +33,7 @@ exports.run = async (client, interaction) => {
         '`\n' +
         t.commands.profile.embed.role +
         ': `' +
-        userInfo.userInfo.roles[0].name +
+        roles +
         '`\n' +
         t.commands.profile.embed.lastlogin +
         ': `' +
