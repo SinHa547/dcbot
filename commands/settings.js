@@ -15,14 +15,14 @@ exports.run = async (client, interaction) => {
 
 // Register command
 const cmd = new Discord.SlashCommandBuilder()
-  .setName('leaderos')
-  .setDescription('LeaderOS')
+  .setName('settings')
+  .setDescription('Settings')
   .setDMPermission(false)
   .setDefaultMemberPermissions(8)
   .addSubcommand(
     new Discord.SlashCommandSubcommandBuilder()
-      .setName('update-settings')
-      .setDescription(t.commands.leaderos.updateSettings.description)
+      .setName('update')
+      .setDescription(t.commands.settings.updateSettings.description)
   );
 
 exports.data = cmd.toJSON();

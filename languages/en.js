@@ -4,7 +4,7 @@ module.exports = {
   notSynced: 'You need to sync your account first.',
   ticketClosing: 'Ticket closing...',
   commands: {
-    leaderos: {
+    settings: {
       updateSettings: {
         description: "Updates client's settings.",
       },
@@ -16,6 +16,8 @@ module.exports = {
         username: 'Username',
         email: 'Email',
         credits: 'Credits',
+        role: 'Rank',
+        lastlogin: 'Last Login'
       },
     },
   },

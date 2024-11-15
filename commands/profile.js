@@ -27,13 +27,13 @@ exports.run = async (client, interaction) => {
         ': `' +
         userInfo.realname +
         '`\n' +
-        t.commands.profile.embed.email +
+        t.commands.profile.embed.role +
         ': `' +
-        userInfo.email +
+        userInfo.userInfo.roles[0].name +
         '`\n' +
-        t.commands.profile.embed.credits +
+        t.commands.profile.embed.lastlogin +
         ': `' +
-        userInfo.credit +
+        userInfo.lastlogin +
         '`'
     )
     .setThumbnail(`https://minotar.net/helm/${userInfo.realname}`)
@@ -41,7 +41,7 @@ exports.run = async (client, interaction) => {
 
   interaction.reply({
     embeds: [embed],
-    ephemeral: true,
+    ephemeral: false,
   });
 };
 
